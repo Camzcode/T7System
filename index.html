@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>T7 System — Sistemas que organizam o seu negócio</title>
-    <meta name="description" content="T7 System - Desenvolvimento de sistemas de organização e ferramentas de trabalho para qualquer ramo.">
+    <meta name="description" content="T7 System - Desenvolvimento de sistemas de organização, automação de processos e ferramentas sob medida para qualquer ramo.">
+    <meta name="theme-color" content="#1a2e4a">
+    <meta property="og:title" content="T7 System — Sistemas que organizam o seu negócio">
+    <meta property="og:description" content="Desenvolvemos sistemas sob medida para automatizar processos e escalar operações.">
+    <meta property="og:type" content="website">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -12,27 +16,32 @@
 </head>
 <body>
 
-    <!-- ===== NAVBAR ===== -->
+    <!-- SCROLL PROGRESS -->
+    <div id="scrollProgress" aria-hidden="true"></div>
+
+    <!-- NAVBAR -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
-            <a href="#" class="nav-logo">
+            <a href="#" class="nav-logo" aria-label="T7 System - Início">
                 <img src="logo.png" alt="T7 System" class="logo-img">
             </a>
-            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu">
                 <span></span><span></span><span></span>
             </button>
-            <ul class="nav-menu" id="navMenu">
+            <ul class="nav-menu" id="navMenu" role="list">
                 <li><a href="#sobre" class="nav-link">Sobre</a></li>
                 <li><a href="#servicos" class="nav-link">Serviços</a></li>
                 <li><a href="#portfolio" class="nav-link">Portfólio</a></li>
+                <li><a href="#depoimentos" class="nav-link">Depoimentos</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
                 <li><a href="#contato" class="nav-link btn-nav">Fale Conosco</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- ===== HERO ===== -->
+    <!-- HERO -->
     <section class="hero" id="hero">
-        <div class="hero-bg"></div>
+        <div class="hero-bg" aria-hidden="true"></div>
         <div class="container hero-container">
             <div class="hero-content">
                 <p class="hero-label">T7 SYSTEM</p>
@@ -41,67 +50,76 @@
                     o seu negócio.
                 </h1>
                 <p class="hero-subtitle">
-                    Desenvolvemos ferramentas sob medida para automatizar processos, 
+                    Desenvolvemos ferramentas sob medida para automatizar processos,
                     eliminar trabalho manual e escalar operações — para qualquer ramo.
                 </p>
                 <div class="hero-cta">
-                    <a href="#contato" class="btn btn-gold">Começar um projeto</a>
-                    <a href="#portfolio" class="btn btn-outline">Ver portfólio</a>
+                    <a href="#contato" class="btn btn-gold" id="hero-cta-primary">Começar um projeto →</a>
+                    <a href="#portfolio" class="btn btn-outline" id="hero-cta-secondary">Ver portfólio</a>
                 </div>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number">4+</span>
+                <div class="hero-stats" role="list">
+                    <div class="stat" role="listitem">
+                        <span class="stat-number" data-target="4" data-suffix="+">4+</span>
                         <span class="stat-label">Sistemas entregues</span>
                     </div>
-                    <div class="stat">
-                        <span class="stat-number">9.000</span>
+                    <div class="stat" role="listitem">
+                        <span class="stat-number" data-target="9000">9.000</span>
                         <span class="stat-label">Notas processadas</span>
                     </div>
-                    <div class="stat">
-                        <span class="stat-number">100%</span>
+                    <div class="stat" role="listitem">
+                        <span class="stat-number" data-target="100" data-suffix="%">100%</span>
                         <span class="stat-label">Automação</span>
                     </div>
                 </div>
             </div>
         </div>
+        <a href="#sobre" class="hero-scroll" aria-label="Rolar para baixo">
+            <span class="hero-scroll-line"></span>
+        </a>
     </section>
 
-    <!-- ===== SOBRE ===== -->
+    <!-- SOBRE -->
     <section class="section sobre" id="sobre">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <p class="section-label">SOBRE NÓS</p>
                 <h2 class="section-title">Três mentes, <span class="text-gold">uma missão</span></h2>
             </div>
             <div class="sobre-grid">
-                <div class="sobre-text">
+                <div class="sobre-text reveal">
                     <p>
-                        A T7 System nasceu da ideia de que <strong>tecnologia deve servir ao negócio</strong>, 
-                        não o contrário. Somos três fundadores unidos pela paixão em resolver problemas 
+                        A T7 System nasceu da ideia de que <strong>tecnologia deve servir ao negócio</strong>,
+                        não o contrário. Somos três fundadores unidos pela paixão em resolver problemas
                         reais com código.
                     </p>
                     <p>
-                        Especializados em <strong>sistemas de organização</strong> e <strong>automação de processos</strong>, 
-                        desenvolvemos ferramentas que eliminam trabalho manual, reduzem erros e dão 
+                        Especializados em <strong>sistemas de organização</strong> e <strong>automação de processos</strong>,
+                        desenvolvemos ferramentas que eliminam trabalho manual, reduzem erros e dão
                         tempo de volta para o que importa: fazer o negócio crescer.
                     </p>
                     <div class="sobre-values">
                         <div class="value">
-                            <span class="value-icon">⚡</span>
+                            <div class="value-icon-wrap" aria-hidden="true">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                            </div>
                             <div>
                                 <strong>Agilidade</strong>
                                 <p>Entrega rápida, sem enrolação</p>
                             </div>
                         </div>
                         <div class="value">
-                            <span class="value-icon">🔒</span>
+                            <div class="value-icon-wrap" aria-hidden="true">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                            </div>
                             <div>
                                 <strong>Segurança</strong>
                                 <p>Dados protegidos por padrão</p>
                             </div>
                         </div>
                         <div class="value">
-                            <span class="value-icon">🎯</span>
+                            <div class="value-icon-wrap" aria-hidden="true">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+                            </div>
                             <div>
                                 <strong>Foco no resultado</strong>
                                 <p>Código que resolve problema de verdade</p>
@@ -109,53 +127,81 @@
                         </div>
                     </div>
                 </div>
-                <div class="sobre-visual">
+                <div class="sobre-visual reveal">
                     <div class="team-card">
                         <div class="team-logo">
-                            <span class="logo-t big">T</span><span class="logo-7 big">7</span>
+                            <img src="logo.png" alt="T7 System" class="team-logo-img">
                         </div>
                         <p class="team-motto">"Time 7 não falha."</p>
+                        <div class="team-stats">
+                            <div class="team-stat">
+                                <span class="team-stat-num">3</span>
+                                <span class="team-stat-label">Fundadores</span>
+                            </div>
+                            <div class="team-stat-divider"></div>
+                            <div class="team-stat">
+                                <span class="team-stat-num">2024</span>
+                                <span class="team-stat-label">Fundação</span>
+                            </div>
+                            <div class="team-stat-divider"></div>
+                            <div class="team-stat">
+                                <span class="team-stat-num">SP</span>
+                                <span class="team-stat-label">Brasil</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== SERVIÇOS ===== -->
+    <!-- SERVIÇOS -->
     <section class="section servicos" id="servicos">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <p class="section-label">SERVIÇOS</p>
                 <h2 class="section-title">O que <span class="text-gold">fazemos</span></h2>
             </div>
             <div class="servicos-grid">
-                <div class="servico-card">
-                    <div class="servico-icon">📊</div>
+                <div class="servico-card reveal">
+                    <div class="servico-icon-wrap" aria-hidden="true">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                    </div>
                     <h3>Sistemas de Gestão</h3>
                     <p>CRMs, ERPs, sistemas de OS, controle financeiro — sob medida pro seu fluxo de trabalho.</p>
                 </div>
-                <div class="servico-card">
-                    <div class="servico-icon">🤖</div>
+                <div class="servico-card reveal">
+                    <div class="servico-icon-wrap" aria-hidden="true">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 12l9-9"/><path d="M17 3h4v4"/></svg>
+                    </div>
                     <h3>Automação de Processos</h3>
-                    <p>Scripts e bots que eliminam tarefas repetitivas. Consulta de notas, sincronização de dados, relatórios automáticos.</p>
+                    <p>Scripts e bots que eliminam tarefas repetitivas. Consulta de notas, sync de dados, relatórios automáticos.</p>
                 </div>
-                <div class="servico-card">
-                    <div class="servico-icon">🌐</div>
+                <div class="servico-card reveal">
+                    <div class="servico-icon-wrap" aria-hidden="true">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </div>
                     <h3>Sistemas Web</h3>
                     <p>Aplicações web modernas, acessíveis de qualquer lugar. Painéis, formulários online, dashboards.</p>
                 </div>
-                <div class="servico-card">
-                    <div class="servico-icon">📱</div>
+                <div class="servico-card reveal">
+                    <div class="servico-icon-wrap" aria-hidden="true">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                    </div>
                     <h3>Integrações e APIs</h3>
                     <p>Conectamos seus sistemas com WhatsApp, Firebase, SEFAZ, planilhas e qualquer serviço externo.</p>
                 </div>
-                <div class="servico-card">
-                    <div class="servico-icon">🔒</div>
+                <div class="servico-card reveal">
+                    <div class="servico-icon-wrap" aria-hidden="true">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
                     <h3>Segurança Digital</h3>
                     <p>Criptografia, autenticação, controle de acesso. Seus dados protegidos com padrão enterprise.</p>
                 </div>
-                <div class="servico-card">
-                    <div class="servico-icon">📈</div>
+                <div class="servico-card reveal">
+                    <div class="servico-icon-wrap" aria-hidden="true">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    </div>
                     <h3>Consultoria em TI</h3>
                     <p>Análise de processos, mapeamento de gargalos e recomendação de soluções tecnológicas.</p>
                 </div>
@@ -163,108 +209,268 @@
         </div>
     </section>
 
-    <!-- ===== PORTFÓLIO ===== -->
+    <!-- PORTFÓLIO -->
     <section class="section portfolio" id="portfolio">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <p class="section-label">PORTFÓLIO</p>
                 <h2 class="section-title">Projetos <span class="text-gold">reais</span></h2>
             </div>
-            <div class="portfolio-grid">
+            <div class="portfolio-filters reveal" role="group" aria-label="Filtros de portfólio">
+                <button class="filter-btn active" data-filter="all" id="filter-all">Todos</button>
+                <button class="filter-btn" data-filter="financeiro" id="filter-financeiro">Financeiro</button>
+                <button class="filter-btn" data-filter="contabilidade" id="filter-contabilidade">Contabilidade</button>
+                <button class="filter-btn" data-filter="automacao" id="filter-automacao">Automação</button>
+                <button class="filter-btn" data-filter="assistencia" id="filter-assistencia">Assistência</button>
+            </div>
+            <div class="portfolio-grid" id="portfolioGrid">
 
-                <div class="portfolio-card">
-                    <div class="portfolio-thumb thumb-contabilidade"></div>
+                <article class="portfolio-card reveal" data-category="financeiro">
+                    <div class="portfolio-thumb thumb-contabilidade" aria-hidden="true">
+                        <div class="thumb-pattern"></div>
+                        <div class="thumb-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(212,160,23,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </div>
+                    </div>
                     <div class="portfolio-info">
                         <span class="portfolio-tag">Gestão Financeira</span>
                         <h3>Sistema de Contabilidade</h3>
-                        <p>Plataforma completa para escritórios de contabilidade com distribuição de lucros, rendimentos financeiros, controle de acesso multiusuário e criptografia AES-256.</p>
-                        <div class="portfolio-tech">
+                        <p>Plataforma completa com distribuição de lucros, rendimentos financeiros, multiusuário e criptografia AES-256.</p>
+                        <div class="portfolio-tech" aria-label="Tecnologias utilizadas">
                             <span>HTML/CSS/JS</span>
                             <span>Firebase</span>
                             <span>AES-256</span>
                             <span>GitHub Pages</span>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="portfolio-card">
-                    <div class="portfolio-thumb thumb-os"></div>
+                <article class="portfolio-card reveal" data-category="assistencia">
+                    <div class="portfolio-thumb thumb-os" aria-hidden="true">
+                        <div class="thumb-pattern"></div>
+                        <div class="thumb-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(212,160,23,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                        </div>
+                    </div>
                     <div class="portfolio-info">
                         <span class="portfolio-tag">Assistência Técnica</span>
                         <h3>Sistema OS — Equipamentos Médicos</h3>
-                        <p>Sistema de ordens de serviço para gestão de equipamentos médicos (raio-x, ultrassom, endoscópio). CRM integrado com gestão de clientes e técnicos.</p>
-                        <div class="portfolio-tech">
+                        <p>Ordens de serviço para raio-x, ultrassom e endoscópio. CRM integrado com gestão de clientes e técnicos.</p>
+                        <div class="portfolio-tech" aria-label="Tecnologias utilizadas">
                             <span>PHP</span>
                             <span>MySQL</span>
                             <span>JavaScript</span>
                             <span>WhatsApp API</span>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="portfolio-card">
-                    <div class="portfolio-thumb thumb-atos"></div>
+                <article class="portfolio-card reveal" data-category="contabilidade">
+                    <div class="portfolio-thumb thumb-atos" aria-hidden="true">
+                        <div class="thumb-pattern"></div>
+                        <div class="thumb-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(212,160,23,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                        </div>
+                    </div>
                     <div class="portfolio-info">
                         <span class="portfolio-tag">Contabilidade</span>
                         <h3>Sistema de Atos Societários</h3>
-                        <p>Gestão de abertura, alteração e encerramento de empresas. Cliente acessa via link único, sem necessidade de login.</p>
-                        <div class="portfolio-tech">
+                        <p>Gestão de abertura, alteração e encerramento de empresas. Cliente acessa via link único, sem login.</p>
+                        <div class="portfolio-tech" aria-label="Tecnologias utilizadas">
                             <span>HTML/CSS/JS</span>
                             <span>Firebase</span>
                             <span>GitHub Pages</span>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="portfolio-card">
-                    <div class="portfolio-thumb thumb-nfe"></div>
+                <article class="portfolio-card reveal" data-category="automacao">
+                    <div class="portfolio-thumb thumb-nfe" aria-hidden="true">
+                        <div class="thumb-pattern"></div>
+                        <div class="thumb-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(212,160,23,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                        </div>
+                    </div>
                     <div class="portfolio-info">
                         <span class="portfolio-tag">Automação Fiscal</span>
                         <h3>Consulta NF-e em Lote</h3>
-                        <p>Automação para validação de milhares de notas fiscais via webservice SEFAZ. 9.000 notas processadas em ~2 horas. Interface web com tema dark/gold.</p>
-                        <div class="portfolio-tech">
+                        <p>9.000 notas fiscais processadas em ~2h via webservice SEFAZ com certificado A1. Interface dark/gold.</p>
+                        <div class="portfolio-tech" aria-label="Tecnologias utilizadas">
                             <span>Python</span>
                             <span>Flask</span>
                             <span>Zeep</span>
                             <span>Certificado A1</span>
                         </div>
                     </div>
-                </div>
+                </article>
 
             </div>
         </div>
     </section>
 
-    <!-- ===== CONTATO ===== -->
+    <!-- DEPOIMENTOS -->
+    <section class="section depoimentos" id="depoimentos">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-label">DEPOIMENTOS</p>
+                <h2 class="section-title">O que dizem <span class="text-gold">nossos clientes</span></h2>
+            </div>
+            <div class="depoimentos-wrap reveal">
+                <div class="depoimentos-slider" id="depoimentosSlider" role="region" aria-label="Depoimentos de clientes" aria-live="polite">
+                    <div class="depoimento active" role="group" aria-label="Depoimento 1 de 3">
+                        <div class="depoimento-quote-mark" aria-hidden="true">"</div>
+                        <p class="depoimento-quote">A T7 transformou nosso processo de NF-e. O que levava 2 dias agora roda em 2 horas, sozinho.</p>
+                        <div class="depoimento-author-info">
+                            <div class="depoimento-avatar" aria-hidden="true">CM</div>
+                            <div>
+                                <p class="depoimento-author">Carlos Mendes</p>
+                                <p class="depoimento-role">Diretor Fiscal — Empresa Y</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="depoimento" role="group" aria-label="Depoimento 2 de 3">
+                        <div class="depoimento-quote-mark" aria-hidden="true">"</div>
+                        <p class="depoimento-quote">Time atencioso, entrega rápida e código limpo. Recomendo de olhos fechados.</p>
+                        <div class="depoimento-author-info">
+                            <div class="depoimento-avatar" aria-hidden="true">AP</div>
+                            <div>
+                                <p class="depoimento-author">Ana Paula Souza</p>
+                                <p class="depoimento-role">CEO — Contábil Prime</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="depoimento" role="group" aria-label="Depoimento 3 de 3">
+                        <div class="depoimento-quote-mark" aria-hidden="true">"</div>
+                        <p class="depoimento-quote">Automatizaram nosso CRM em 3 semanas. Resultado profissional e suporte excelente.</p>
+                        <div class="depoimento-author-info">
+                            <div class="depoimento-avatar" aria-hidden="true">RL</div>
+                            <div>
+                                <p class="depoimento-author">Roberto Lima</p>
+                                <p class="depoimento-role">Gerente — TechMed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn" id="sliderPrev" aria-label="Depoimento anterior">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                    </button>
+                    <div class="slider-dots" role="tablist" aria-label="Navegar entre depoimentos">
+                        <button class="dot active" data-slide="0" role="tab" aria-selected="true" aria-label="Depoimento 1"></button>
+                        <button class="dot" data-slide="1" role="tab" aria-selected="false" aria-label="Depoimento 2"></button>
+                        <button class="dot" data-slide="2" role="tab" aria-selected="false" aria-label="Depoimento 3"></button>
+                    </div>
+                    <button class="slider-btn" id="sliderNext" aria-label="Próximo depoimento">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq" id="faq">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-label">FAQ</p>
+                <h2 class="section-title">Perguntas <span class="text-gold">frequentes</span></h2>
+            </div>
+            <div class="faq-list" role="list">
+                <div class="faq-item reveal" role="listitem">
+                    <button class="faq-question" aria-expanded="false" id="faq-btn-1" aria-controls="faq-answer-1">
+                        <span>Quanto tempo leva para desenvolver um sistema?</span>
+                        <span class="faq-icon" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-1" role="region" aria-labelledby="faq-btn-1">
+                        <div class="faq-answer-inner">Depende do escopo. Sistemas simples ficam prontos em 2–4 semanas. Projetos maiores podem levar 2–3 meses. Sempre entregamos em sprints semanais com atualizações constantes.</div>
+                    </div>
+                </div>
+                <div class="faq-item reveal" role="listitem">
+                    <button class="faq-question" aria-expanded="false" id="faq-btn-2" aria-controls="faq-answer-2">
+                        <span>Vocês oferecem suporte após a entrega?</span>
+                        <span class="faq-icon" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-2" role="region" aria-labelledby="faq-btn-2">
+                        <div class="faq-answer-inner">Sim! Oferecemos planos de manutenção mensal com correções, novas features e suporte direto via WhatsApp.</div>
+                    </div>
+                </div>
+                <div class="faq-item reveal" role="listitem">
+                    <button class="faq-question" aria-expanded="false" id="faq-btn-3" aria-controls="faq-answer-3">
+                        <span>Posso ter acesso ao código-fonte?</span>
+                        <span class="faq-icon" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-3" role="region" aria-labelledby="faq-btn-3">
+                        <div class="faq-answer-inner">Sim. Todo código entregue é seu. Disponibilizamos via GitHub privado ou conforme sua preferência.</div>
+                    </div>
+                </div>
+                <div class="faq-item reveal" role="listitem">
+                    <button class="faq-question" aria-expanded="false" id="faq-btn-4" aria-controls="faq-answer-4">
+                        <span>Como funciona o pagamento?</span>
+                        <span class="faq-icon" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-4" role="region" aria-labelledby="faq-btn-4">
+                        <div class="faq-answer-inner">Trabalhamos com 50% no início e 50% na entrega. Para projetos longos, dividimos em parcelas mensais conforme as sprints.</div>
+                    </div>
+                </div>
+                <div class="faq-item reveal" role="listitem">
+                    <button class="faq-question" aria-expanded="false" id="faq-btn-5" aria-controls="faq-answer-5">
+                        <span>Trabalham com empresas de qualquer ramo?</span>
+                        <span class="faq-icon" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-5" role="region" aria-labelledby="faq-btn-5">
+                        <div class="faq-answer-inner">Sim. Já atendemos contabilidade, saúde, comércio, serviços e setor fiscal. O foco é entender o processo e entregar a solução certa para cada negócio.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATO -->
     <section class="section contato" id="contato">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <p class="section-label">CONTATO</p>
                 <h2 class="section-title">Vamos <span class="text-gold">conversar</span>?</h2>
             </div>
             <div class="contato-grid">
-                <div class="contato-info">
+                <div class="contato-info reveal">
                     <p class="contato-texto">
-                        Tem um projeto em mente? Quer automatizar processos no seu negócio? 
+                        Tem um projeto em mente? Quer automatizar processos no seu negócio?
                         Entre em contato — a gente resolve.
                     </p>
                     <div class="contato-items">
-                        <div class="contato-item">
-                            <span class="contato-icon">📱</span>
+                        <a href="https://wa.me/5511999999999" class="contato-item" target="_blank" rel="noopener" aria-label="WhatsApp T7 System">
+                            <span class="contato-icon-wrap" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l1.07-.93a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            </span>
                             <div>
                                 <strong>WhatsApp</strong>
                                 <p>(11) XXXXX-XXXX</p>
                             </div>
-                        </div>
-                        <div class="contato-item">
-                            <span class="contato-icon">📧</span>
+                        </a>
+                        <a href="mailto:contato@t7system.com.br" class="contato-item" aria-label="E-mail T7 System">
+                            <span class="contato-icon-wrap" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            </span>
                             <div>
                                 <strong>E-mail</strong>
                                 <p>contato@t7system.com.br</p>
                             </div>
-                        </div>
+                        </a>
                         <div class="contato-item">
-                            <span class="contato-icon">📍</span>
+                            <span class="contato-icon-wrap" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            </span>
                             <div>
                                 <strong>Localização</strong>
                                 <p>São Paulo — SP</p>
@@ -272,47 +478,60 @@
                         </div>
                     </div>
                 </div>
-                <div class="contato-form-wrap">
-                    <form class="contato-form" onsubmit="enviarMensagem(event)">
+                <div class="contato-form-wrap reveal">
+                    <form class="contato-form" id="contatoForm" onsubmit="enviarMensagem(event)" novalidate>
                         <div class="form-group">
-                            <label>Nome</label>
-                            <input type="text" placeholder="Seu nome completo" required>
+                            <label for="nome">Nome</label>
+                            <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required autocomplete="name">
                         </div>
                         <div class="form-group">
-                            <label>E-mail</label>
-                            <input type="email" placeholder="seu@email.com" required>
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" placeholder="seu@email.com" required autocomplete="email">
                         </div>
                         <div class="form-group">
-                            <label>Mensagem</label>
-                            <textarea rows="4" placeholder="Conta pra gente o que você precisa..." required></textarea>
+                            <label for="mensagem">Mensagem</label>
+                            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Conta pra gente o que você precisa..." required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-gold btn-full">Enviar mensagem</button>
+                        <button type="submit" class="btn btn-gold btn-full" id="submitBtn">Enviar mensagem →</button>
+                        <p class="form-feedback" id="formFeedback" role="alert" aria-live="polite"></p>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== FOOTER ===== -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container footer-container">
             <div class="footer-brand">
-                <a href="#" class="nav-logo">
-                    <img src="logo.png" alt="T7 System" class="logo-img">
+                <a href="#" class="nav-logo" aria-label="T7 System - Voltar ao topo">
+                    <img src="logo.png" alt="T7 System" class="logo-img logo-img-small">
                 </a>
                 <p>Sistemas que organizam o seu negócio.</p>
             </div>
-            <div class="footer-links">
+            <nav class="footer-links" aria-label="Links do rodapé">
                 <a href="#sobre">Sobre</a>
                 <a href="#servicos">Serviços</a>
                 <a href="#portfolio">Portfólio</a>
+                <a href="#depoimentos">Depoimentos</a>
+                <a href="#faq">FAQ</a>
                 <a href="#contato">Contato</a>
-            </div>
+            </nav>
             <div class="footer-copy">
                 <p>&copy; 2026 T7 System. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/5511999999999" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp" id="whatsappFloat">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+    </a>
+
+    <!-- Back to top -->
+    <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
 
     <script src="script.js"></script>
 </body>
