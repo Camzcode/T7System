@@ -71,6 +71,66 @@ backToTop.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
+// ===== HERO BACKGROUND VIDEO =====
+// Uses requestAnimationFrame so each loop fades smoothly without CSS animations.
+const backgroundVideo = document.getElementById('backgroundVideo');
+let videoFadeFrame = null;
+let fadingVideoOut = false;
+
+function fadeBackgroundVideo(targetOpacity, duration = 500) {
+    if (videoFadeFrame !== null) cancelAnimationFrame(videoFadeFrame);
+
+    const startOpacity = Number.parseFloat(
+        backgroundVideo.style.opacity || getComputedStyle(backgroundVideo).opacity
+    ) || 0;
+    const opacityDifference = targetOpacity - startOpacity;
+    const startedAt = performance.now();
+
+    function animateVideoFade(now) {
+        const progress = Math.min((now - startedAt) / duration, 1);
+        backgroundVideo.style.opacity = String(startOpacity + opacityDifference * progress);
+
+        if (progress < 1) {
+            videoFadeFrame = requestAnimationFrame(animateVideoFade);
+        } else {
+            videoFadeFrame = null;
+        }
+    }
+
+    videoFadeFrame = requestAnimationFrame(animateVideoFade);
+}
+
+function playBackgroundVideo() {
+    backgroundVideo.play().then(() => fadeBackgroundVideo(1)).catch(() => {
+        // The original Navy hero remains the visual fallback if playback is unavailable.
+    });
+}
+
+if (backgroundVideo) {
+    backgroundVideo.addEventListener('loadeddata', playBackgroundVideo);
+
+    backgroundVideo.addEventListener('timeupdate', () => {
+        if (!fadingVideoOut && Number.isFinite(backgroundVideo.duration)
+            && backgroundVideo.duration - backgroundVideo.currentTime <= 0.55) {
+            fadingVideoOut = true;
+            fadeBackgroundVideo(0);
+        }
+    });
+
+    backgroundVideo.addEventListener('ended', () => {
+        if (videoFadeFrame !== null) cancelAnimationFrame(videoFadeFrame);
+        backgroundVideo.style.opacity = '0';
+
+        setTimeout(() => {
+            backgroundVideo.currentTime = 0;
+            fadingVideoOut = false;
+            playBackgroundVideo();
+        }, 100);
+    });
+
+    if (backgroundVideo.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) playBackgroundVideo();
+}
+
 // ===== REVEAL ON SCROLL =====
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
