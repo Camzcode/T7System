@@ -173,7 +173,7 @@ components:
 
 ## Brand & Style
 
-T7 System is a B2B enterprise software company delivering OS/CRM, accounting, and NF-e solutions to Brazilian businesses. The visual identity communicates **institutional trust, technical precision, and premium positioning** — a "Navy & Gold" language that signals authority without excess.
+T7 System is a technology company focused on custom software, process automation, and system integrations for Brazilian businesses. The visual identity communicates **institutional trust, technical precision, and premium positioning** — a "Navy & Gold" language that signals authority without excess.
 
 The aesthetic is corporate-solid: no glassmorphism, no gradients-on-gradients, no ethereal floats. Elements sit firmly on clear surfaces. Gold acts as the singular accent — it drives every call-to-action and brand signature. Navy grounds the composition with weight and depth. The palette is deliberately constrained to force visual hierarchy through color scarcity.
 
@@ -231,7 +231,7 @@ Fixed top navbar, transparent on hero, transitions to Navy with blur on scroll. 
 
 ### Hero
 
-Full-viewport Navy section with radial Gold gradient accents (15% and 8% opacity). Gold label → White title → Muted white subtitle → Gold CTA. Stats row shows metrics in Gold numbers + muted white labels.
+Full-viewport Navy section with radial Gold gradient accents (15% and 8% opacity). Gold label → White title → Muted white subtitle → Gold CTA. The supporting row highlights qualitative capabilities in Gold text + muted white labels.
 
 ### Service Cards
 

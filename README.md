@@ -2,13 +2,13 @@
 
 [![GitHub Pages](https://img.shields.io/badge/Site-online-brightgreen)](https://brunobrrt.github.io/T7System-Site)
 
-Site institucional da **T7 System** — empresa de tecnologia especializada em desenvolvimento de sistemas, inteligência artificial e segurança da informação.
+Site institucional da **T7 System** — empresa de tecnologia que desenvolve sistemas sob medida, automações e integrações para negócios.
 
 🔗 **Live:** [brunobrrt.github.io/T7System-Site](https://brunobrrt.github.io/T7System-Site)
 
 ## Sobre
 
-A T7 System desenvolve ferramentas sob medida para automatizar processos, eliminar trabalho manual e escalar operações — para qualquer ramo.
+A T7 System desenvolve soluções digitais para organizar processos, integrar operações e apoiar a evolução de negócios.
 
 ### Áreas de atuação
 
@@ -16,8 +16,8 @@ A T7 System desenvolve ferramentas sob medida para automatizar processos, elimin
 - 🤖 Automação de Processos
 - 🌐 Sistemas Web
 - 📱 Integrações e APIs
-- 🔒 Segurança Digital
-- 📈 Consultoria em TI
+- 🔒 Segurança aplicada a sistemas
+- 📈 Análise e evolução de processos
 
 ## Stack
 

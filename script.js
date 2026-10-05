@@ -289,20 +289,20 @@ function enviarMensagem(e) {
         return;
     }
 
-    // Build WhatsApp message
-    const texto = encodeURIComponent(
+    const assunto = encodeURIComponent(`Contato pelo site — ${nome}`);
+    const corpo = encodeURIComponent(
         `Olá T7 System!\n\nMeu nome é ${nome}.\n\n${mensagem}\n\nE-mail: ${email}`
     );
 
-    window.open(`https://wa.me/5511XXXXXXXXX?text=${texto}`, '_blank');
+    window.location.href = `mailto:contato@t7system.com.br?subject=${assunto}&body=${corpo}`;
 
     const original = btn.textContent;
-    btn.textContent = '✓ Redirecionando para WhatsApp...';
+    btn.textContent = '✓ Abrindo seu e-mail...';
     btn.style.background = '#2e7d32';
     btn.style.borderColor = '#2e7d32';
     btn.disabled = true;
 
-    feedback.textContent = 'Mensagem enviada! Aguarde o redirecionamento.';
+    feedback.textContent = 'Seu aplicativo de e-mail foi aberto para concluir o envio.';
     feedback.className = 'form-feedback success';
 
     setTimeout(() => {
